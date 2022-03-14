@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AboutMe</string>
+    <string name="name">Caique Brener</string>
+    <string name="big_star">Big Star</string>
 </resources>
