@@ -12,15 +12,43 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:text="@string/name"
-        style="@style/TextStyle" />
+        style="@style/NameStyle" />
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/nickname_input"
+        style="@style/NameStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/placeholder"
+        android:inputType="date|textUri|text"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#78909C" />
+
+    <Button
+        android:id="@+id/done_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/marginTopDefault"
+        android:fontFamily="@font/rajdhani"
+        android:text="@string/done" />
+    <TextView
+        android:id="@+id/text_nickname"
+        android:layout_width="match_parent"
+        style="@style/NameStyle"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
     <ImageView
         android:id="@+id/big_star"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTopDefault"
         android:contentDescription="@string/big_star"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:ignore="ImageContrastCheck" />
     <ScrollView
         android:id="@+id/bio_content_scroll"
         android:layout_width="match_parent"
@@ -35,7 +63,7 @@
                 android:id="@+id/bio_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/TextStyle"
+                style="@style/NameStyle"
                 android:lineSpacingMultiplier="1.5"
                 android:text="@string/bio_history"
                 />
