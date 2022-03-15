@@ -1,77 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:paddingHorizontal="@dimen/padding_layout_default"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:ignore="UseCompoundDrawables">
+<layout>
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:text="@string/name"
-        style="@style/NameStyle" />
+    <data>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/nickname_input"
-        style="@style/NameStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/placeholder"
-        android:inputType="date|textUri|text"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        android:textColorHint="#78909C" />
+        <variable
+            name="myName"
+            type="com.ciandt.aboutme.data.MyName" />
+    </data>
 
-    <Button
-        android:id="@+id/done_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/marginTopDefault"
-        android:fontFamily="@font/rajdhani"
-        android:text="@string/done" />
-    <TextView
-        android:id="@+id/text_nickname"
-        android:layout_width="match_parent"
-        style="@style/NameStyle"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        />
-    <ImageView
-        android:id="@+id/big_star"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTopDefault"
-        android:contentDescription="@string/big_star"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:ignore="ImageContrastCheck" />
-    <ScrollView
-        android:id="@+id/bio_content_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/padding_layout_default"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/NameStyle"
+            android:layout_width="match_parent"
+            android:text="@{myName.name}" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nickname_input"
+            style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:hint="@string/placeholder"
+            android:inputType="date|textUri|text"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColorHint="#78909C" />
 
-            <TextView
-                android:id="@+id/bio_text"
+        <Button
+            android:id="@+id/done_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/marginTopDefault"
+            android:fontFamily="@font/rajdhani"
+            android:text="@string/done" />
+
+        <TextView
+            android:id="@+id/text_nickname"
+            style="@style/NameStyle"
+            android:text="@{myName.nickname}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/big_star"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTopDefault"
+            android:contentDescription="@string/big_star"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            tools:ignore="ImageContrastCheck" />
+
+        <ScrollView
+            android:id="@+id/bio_content_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/NameStyle"
-                android:lineSpacingMultiplier="1.5"
-                android:text="@string/bio_history"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:orientation="horizontal">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/bio_text"
+                    style="@style/NameStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/bio_history" />
 
-    </ScrollView>
-</LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>
